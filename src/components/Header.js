@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [navToggleClassName, setNavToggleClassName] = useState("");
+  const navToggle = () => {
+    setNavToggleClassName("show-menu");
+  };
+  const navClose = () => {
+    setNavToggleClassName("");
+  };
+  const linkAction = () => {
+    setNavToggleClassName("");
+  };
   return (
     <>
       <header className="header" id="header">
@@ -9,44 +19,52 @@ const Header = () => {
           <Link to="/" className="nav__logo">
             Alexa
           </Link>
-          <div className="nav__menu" id="nav-menu">
+          <div className={`nav__menu ${navToggleClassName}`} id="nav-menu">
             <ul className="nav__list grid">
               <li className="nav__item">
-                <Link to="/home" className="nav__link">
-                  <i class="uil uil-estate"></i> Home
+                <Link to="/home" className="nav__link" onClick={linkAction}>
+                  <i className="uil uil-estate nav__icon"></i> Home
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/about" className="nav__link">
-                  <i class="uil uil-user"></i> About
+                <Link to="/about" className="nav__link" onClick={linkAction}>
+                  <i className="uil uil-user nav__icon"></i> About
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/skills" className="nav__link">
-                  <i class="uil uil-file-alt"></i> Skills
+                <Link to="/skills" className="nav__link" onClick={linkAction}>
+                  <i className="uil uil-file-alt nav__icon"></i> Skills
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/services" className="nav__link">
-                  <i class="uil uil-briefcase-alt"></i> Services
+                <Link to="/services" className="nav__link" onClick={linkAction}>
+                  <i className="uil uil-briefcase-alt nav__icon"></i> Services
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/portfolio" className="nav__link">
-                  <i class="uil uil-scenery"></i> Portfolio
+                <Link
+                  to="/portfolio"
+                  className="nav__link"
+                  onClick={linkAction}
+                >
+                  <i className="uil uil-scenery nav__icon"></i> Portfolio
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/contact" className="nav__link">
-                  <i class="uil uil-message"></i> Contactme
+                <Link to="/contact" className="nav__link" onClick={linkAction}>
+                  <i className="uil uil-message nav__icon"></i> Contactme
                 </Link>
               </li>
             </ul>
-            <i class="uil uil-times nav__close" id="nav-close"></i>
+            <i
+              className="uil uil-times nav__close"
+              id="nav-close"
+              onClick={navClose}
+            ></i>
           </div>
           <div className="nav__btns">
-            <div className="nav__toggle" id="nav-toggle">
-              <i class="uil uil-apps"></i>
+            <div className="nav__toggle" id="nav-toggle" onClick={navToggle}>
+              <i className="uil uil-apps"></i>
             </div>
           </div>
         </nav>
