@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+// import { Link } from "react-router-dom";
 
 const Header = () => {
   const [navToggleClassName, setNavToggleClassName] = useState("");
@@ -17,33 +18,54 @@ const Header = () => {
       <header className="header" id="header">
         <nav className="nav container">
           <Link to="/" className="nav__logo">
-            Alexa
+            Shivam
           </Link>
           <div className={`nav__menu ${navToggleClassName}`} id="nav-menu">
             <ul className="nav__list grid">
               <li className="nav__item">
-                <Link to="/home" className="nav__link" onClick={linkAction}>
+                <Link
+                  smooth
+                  to="#home"
+                  className="nav__link"
+                  onClick={linkAction}
+                >
                   <i className="uil uil-estate nav__icon"></i> Home
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/about" className="nav__link" onClick={linkAction}>
+                <Link
+                  smooth
+                  to="#about"
+                  className="nav__link"
+                  onClick={linkAction}
+                >
                   <i className="uil uil-user nav__icon"></i> About
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/skills" className="nav__link" onClick={linkAction}>
+                <Link
+                  smooth
+                  to="#skills"
+                  className="nav__link"
+                  onClick={linkAction}
+                >
                   <i className="uil uil-file-alt nav__icon"></i> Skills
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/services" className="nav__link" onClick={linkAction}>
+                <Link
+                  smooth
+                  to="#services"
+                  className="nav__link"
+                  onClick={linkAction}
+                >
                   <i className="uil uil-briefcase-alt nav__icon"></i> Services
                 </Link>
               </li>
               <li className="nav__item">
                 <Link
-                  to="/portfolio"
+                  smooth
+                  to="#portfolio"
                   className="nav__link"
                   onClick={linkAction}
                 >
@@ -51,7 +73,12 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/contact" className="nav__link" onClick={linkAction}>
+                <Link
+                  smooth
+                  to="#contact"
+                  className="nav__link"
+                  onClick={linkAction}
+                >
                   <i className="uil uil-message nav__icon"></i> Contactme
                 </Link>
               </li>

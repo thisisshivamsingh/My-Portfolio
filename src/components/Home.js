@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import img from "../assets/img/perfil.png";
 
 const Home = () => {
   return (
@@ -57,7 +57,7 @@ const Home = () => {
                     className="home__blob-img"
                     x="12"
                     y="18"
-                    src="../Assets/img/perfill.png"
+                    xlinkHref={img}
                   />
                 </g>
               </svg>
@@ -66,7 +66,7 @@ const Home = () => {
               <h1 className="home__title">Hi, I'am Shivam </h1>
               <h3 className="home__subtitle">Frontend developer</h3>
               <p className="home__description">
-                High level Knowledge in web design and in web development,
+                High level experience in web design and development knowledge,
                 producing quality work.
               </p>
               <Link to="/contact" className="button button--flex">
@@ -83,7 +83,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Header />
     </>
   );
 };
