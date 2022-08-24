@@ -5,12 +5,12 @@ import file from "../assets/pdf/Alexa-Cv.pdf";
 const About = () => {
   return (
     <>
-      <section class="about section" id="about">
+      <section className="about section" id="about">
         <h2 className="section__title">About Me</h2>
         <span className="section__subtitle">My introduction</span>
         <div className="about__container container grid">
           <img src={img} alt="" className="about__img" />
-          <div class="about__data">
+          <div className="about__data">
             <p className="about__description">
               Web developer, with extensive knowledge and years of experience,
               working in web technologies and Ui / Ux design, delivering quality

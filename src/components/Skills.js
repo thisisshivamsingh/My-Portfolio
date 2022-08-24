@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Skills = () => {
+  const [frontend, setFrontend] = useState("skills__close");
+  const [backend, setBackend] = useState("skills__close");
+  const [designer, setDesigner] = useState("skills__close");
+  const toggleFrontendSkills = () => {
+    if (frontend === "skills__close") {
+      setFrontend("skills__open");
+      setBackend("skills__close");
+      setDesigner("skills__close");
+    } else {
+      setFrontend("skills__close");
+    }
+  };
+  const toggleBackendSkills = () => {
+    if (backend === "skills__close") {
+      setFrontend("skills__close");
+      setBackend("skills__open");
+      setDesigner("skills__close");
+    } else {
+      setBackend("skills__close");
+    }
+  };
+  const toggleDesignerSkills = () => {
+    if (designer === "skills__close") {
+      setDesigner("skills__open");
+      setFrontend("skills__close");
+      setBackend("skills__close");
+    } else {
+      setDesigner("skills__close");
+    }
+  };
+
   return (
     <>
       <section className="skills section" id="skills">
@@ -9,7 +40,10 @@ const Skills = () => {
         <div className="skills__container container grid">
           <div>
             {/* <!--==================== SKILLS 1 ====================--> */}
-            <div className="skills__content skills__open">
+            <div
+              className={`skills__content ${frontend}`}
+              onClick={() => toggleFrontendSkills()}
+            >
               <div className="skills__header">
                 <i className="uil uil-brackets-curly skills__icon"></i>
 
@@ -17,7 +51,7 @@ const Skills = () => {
                   <h1 className="skills__titles">Frontend developer</h1>
                   <span className="skills__subtitle">More than 4 years</span>
                 </div>
-                <i class="uil uil-angle-down skills__arrow"></i>
+                <i className="uil uil-angle-down skills__arrow"></i>
               </div>
               <div className="skills__list grid">
                 <div className="skills__data">
@@ -60,15 +94,18 @@ const Skills = () => {
             </div>
 
             {/* <!--==================== SKILLS 2 ====================--> */}
-            <div className="skills__content skills__close">
+            <div
+              className={`skills__content ${backend}`}
+              onClick={() => toggleBackendSkills()}
+            >
               <div className="skills__header">
-                <i class="uil uil-server-network skills__icon"></i>
+                <i className="uil uil-server-network skills__icon"></i>
 
                 <div>
                   <h1 className="skills__titles">Backend developer</h1>
                   <span className="skills__subtitle">More than 2 years</span>
                 </div>
-                <i class="uil uil-angle-down skills__arrow"></i>
+                <i className="uil uil-angle-down skills__arrow"></i>
               </div>
               <div className="skills__list grid">
                 <div className="skills__data">
@@ -112,15 +149,18 @@ const Skills = () => {
           </div>
           <div>
             {/* <!--==================== SKILLS 3 ====================--> */}
-            <div className="skills__content skills__close">
+            <div
+              className={`skills__content ${designer}`}
+              onClick={() => toggleDesignerSkills()}
+            >
               <div className="skills__header">
-                <i class="uil uil-swatchbook skills__icon"></i>
+                <i className="uil uil-swatchbook skills__icon"></i>
 
                 <div>
                   <h1 className="skills__titles">Designer</h1>
                   <span className="skills__subtitle">More than 5 years</span>
                 </div>
-                <i class="uil uil-angle-down skills__arrow"></i>
+                <i className="uil uil-angle-down skills__arrow"></i>
               </div>
               <div className="skills__list grid">
                 <div className="skills__data">
